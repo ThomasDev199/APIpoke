@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API's - Explorador Pokémon</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="contenedor-principal">
+    <!-- Encabezado -->
+    <h1 class="titulo">API's</h1>
+    <p class="subtitulo">Explora información de tus favoritos</p>
+
+    <!-- Botones de carga -->
+    <div class="botones">
+      <button id="btn-txt" class="btn-carga">Cargar txt</button>
+      <button id="btn-json" class="btn-carga">Cargar Json</button>
+      <button id="btn-api" class="btn-carga">Cargar API</button>
+    </div>
+
+    <!-- Buscador -->
+    <div class="buscador">
+      <input type="text" id="input-busqueda" placeholder="Busca por nombre o ID..." autocomplete="off">
+      <button id="btn-buscar" class="btn-buscar">Buscar</button>
+    </div>
+
+    <!-- Resultados -->
+    <section id="resultados" class="resultados"></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

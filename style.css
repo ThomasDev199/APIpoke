@@ -1,0 +1,233 @@
+/* ===== Reinicio básico ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Fondo y fuente general ===== */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #e53935 0%, #b71c1c 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #fff;
+  text-align: center;
+}
+
+.contenedor-principal {
+  padding: 40px 16px 60px;
+}
+
+/* ===== Título y subtítulo ===== */
+.titulo {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 3px 3px 0 #7f0000;
+}
+
+.subtitulo {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-top: 8px;
+  margin-bottom: 28px;
+}
+
+/* ===== Botones de carga ===== */
+.botones {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.btn-carga {
+  background: #ffcc00;
+  color: #333;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 12px 26px;
+  border: none;
+  border-bottom: 5px solid #d4a600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-bottom-width 0.15s ease;
+}
+
+.btn-carga:hover {
+  transform: translateY(-2px);
+}
+
+.btn-carga:active {
+  transform: translateY(2px);
+  border-bottom-width: 2px;
+}
+
+/* Indica cuál fue el último botón usado */
+.btn-carga.activo {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+.btn-carga:focus-visible,
+.btn-buscar:focus-visible,
+#input-busqueda:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+/* ===== Buscador ===== */
+.buscador {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+#input-busqueda {
+  width: 100%;
+  max-width: 320px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 50px;
+  background: #fff;
+  color: #333;
+}
+
+.btn-buscar {
+  background: #ef5350;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.btn-buscar:hover {
+  background: #f26461;
+  transform: translateY(-2px);
+}
+
+.btn-buscar:active {
+  transform: translateY(1px);
+}
+
+/* ===== Contenedor de resultados (grid responsive) ===== */
+.resultados {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Mensajes (cargando, errores, avisos) ocupan toda la fila */
+.mensaje {
+  grid-column: 1 / -1;
+  font-size: 1.1rem;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+}
+
+/* ===== Tarjeta de Pokémon ===== */
+.tarjeta {
+  background: #fff;
+  color: #333;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.3);
+}
+
+.tarjeta img {
+  width: 100%;
+  max-width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.tarjeta h3 {
+  margin-top: 8px;
+  font-size: 1.2rem;
+}
+
+.tarjeta .id {
+  color: #888;
+  font-weight: bold;
+  margin: 4px 0 10px;
+}
+
+/* ===== Etiquetas de tipos ===== */
+.tipos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.tipo {
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 50px;
+  background: #999; /* color por defecto */
+}
+
+.tipo-normal   { background: #a8a77a; }
+.tipo-fuego    { background: #f57c00; }
+.tipo-agua     { background: #1e88e5; }
+.tipo-planta   { background: #43a047; }
+.tipo-electrico{ background: #f9a825; color: #333; }
+.tipo-hielo    { background: #4dd0e1; color: #333; }
+.tipo-lucha    { background: #c62828; }
+.tipo-veneno   { background: #8e24aa; }
+.tipo-tierra   { background: #a1887f; }
+.tipo-volador  { background: #7e8ce0; }
+.tipo-psiquico { background: #ec407a; }
+.tipo-bicho    { background: #9e9d24; }
+.tipo-roca     { background: #8d6e63; }
+.tipo-fantasma { background: #5e4a8a; }
+.tipo-dragon   { background: #4527a0; }
+.tipo-siniestro{ background: #4e342e; }
+.tipo-acero    { background: #78909c; }
+.tipo-hada     { background: #f48fb1; color: #333; }
+
+/* ===== Datos físicos ===== */
+.datos {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .titulo {
+    font-size: 2.8rem;
+  }
+  .resultados {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
